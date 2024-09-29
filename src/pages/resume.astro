@@ -4,11 +4,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Skills from '~/components/widgets/Skills.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -44,8 +41,8 @@ const metadata = {
   <Hero
     id="hero"
     title="Sarah Johnson"
-    tagline="Personal Web Demo"
-    actions={[{ variant: 'primary', text: 'Hire me', href: getPermalink('/contact#form') }]}
+    tagline="Resume"
+    actions={[{ variant: 'primary', text: 'Download Resume', href: getPermalink('/contact#form') }]}
   >
     <Fragment slot="subtitle">
       I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
@@ -119,14 +116,32 @@ const metadata = {
     items={[
       {
         title:
-          'Graphic Designer <br /> <span class="font-normal">ABC Design Studio, New York, NY</span> <br /> <span class="text-sm font-normal">2021 - Present</span>',
+          'Senior Backend Engineer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
         description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
         icon: 'tabler:briefcase',
       },
       {
         title:
-          'Junior Graphic Designer <br /> <span class="font-normal">XYZ Creative Agency, Los Angeles, CA</span> <br /> <span class="text-sm font-normal">2018 - 2021</span>',
-        description: `Assisted senior designers in creating design concepts and visual assets. <br /> Contributed to the development of brand identities and marketing collateral. <br /> Collaborated with the marketing team to ensure consistent design across campaigns. <br /> Gained hands-on experience in various design software and tools.`,
+          'Senior Backend Engineer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Software Engineer - Backend <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Backend Developer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
+        icon: 'tabler:briefcase',
+      },
+      {
+        title:
+          'Full Stack Developer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+        description: `Collaborate with clients to understand design requirements and objectives. <br /> Develop branding solutions, including logos, color palettes, and brand guidelines. <br /> Design marketing materials such as brochures, posters, and digital assets. <br /> Create visually appealing user interfaces for websites and applications.`,
         icon: 'tabler:briefcase',
       },
     ]}
@@ -140,15 +155,52 @@ const metadata = {
     title="Education"
     items={[
       {
-        title: `Master of Fine Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2018 - 2020</span>`,
-        icon: 'tabler:school',
-      },
-      {
-        title: `Bachelor of Arts in Graphic Design <br /> <span class="font-normal">New York University's School of Design</span> <br /> <span class="text-sm font-normal">2014 - 2018</span>`,
+        title: `Information System <br /> <span class="font-normal">Universitas Brawijaya</span> <br /> <span class="text-sm font-normal">2017</span>`,
         icon: 'tabler:school',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
+
+  <Skills
+    id="resume"
+    title="Education"
+    items={[
+      {
+        title: `Information System <br /> <span class="font-normal">Universitas Brawijaya</span> <br /> <span class="text-sm font-normal">2017</span>`,
+        icon: 'tabler:school',
+      },
+    ]}
+    classes={{ container: 'max-w-3xl' }}
+  />
+
+  <Content
+  id="about"
+  columns={3}
+  image={{
+    src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
+    alt: 'Colorful Image',
+    loading: 'eager',
+  }}
+>
+  <Fragment slot="content">
+    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+    <p>
+      Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
+      pixel becomes a brushstroke in the canvas of imagination.
+    </p>
+    <br />
+    <p>
+      I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
+      details of typography, or the vibrant hues of nature during my outdoor escapades.
+    </p>
+    <br />
+    <p>If you're curious to dive deeper into my work, you can follow me:</p>
+  </Fragment>
+
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+</Content>
 
 </Layout>
