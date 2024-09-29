@@ -1,0 +1,112 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Personal Homepage Demo',
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+  <Fragment slot="header">
+    <Header
+      links={[
+        { text: 'Home', href: getPermalink('homes/personal') },
+        { text: 'About', href: getPermalink('/about') },
+        { text: 'Resume', href: getPermalink('/resume') },
+        { text: 'Porfolio', href: '#porfolio' },
+        { text: 'Blog', href: '#blog' },
+        { text: 'Github', href: 'https://github.com/onwidget' },
+      ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: '#',
+        },
+      ]}
+      isSticky
+      showToggleTheme
+    />
+  </Fragment>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[]}
+    image={{
+      src: 'https://i.ibb.co.com/5TM0mVP/muhammad-ilham-hidayat.jpg',
+      alt: 'Profile Image',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p class="text-justify">
+        Hello 👋 my name is Ilham. I'm a software engineer from Indonesia experience in Backend Go and Java.
+      </p>
+      <br />
+      <p  class="text-justify">
+        But I don't limit myself working on Front End, Dev Ops, Data Engineering as well
+      </p>
+      <br />
+      <p class="text-justify">
+        My hobbies are collection mini 4wd, building gunpla, collection mech keyboard
+      </p>
+      <br />
+      <p class="text-justify">
+        In spare time, walking in the mroning and exercise
+      </p>
+      <br />
+      <ul class="list-disc list-inside">
+        <li class="text-justify">Now this is a story all about how, my life got flipped-turned upside down</li>
+        <li class="text-justify">Now this is a story all about how, my life got flipped-turned upside down</li>
+        <!-- ... -->
+      </ul>
+      <br />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Features3 Widget ************** -->
+
+  <Hero
+    tagline="Mini 4WD Collection"
+    title=""
+    subtitle=""
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <Hero
+    tagline="Gunpla Collection"
+    title=""
+    subtitle=""
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+  <Hero
+    tagline="Walking / Slow Running Shoe"
+    title=""
+    subtitle=""
+    image={{
+      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      alt: 'AstroWind Hero Image',
+    }}
+  />
+
+</Layout>
