@@ -16,18 +16,11 @@ const metadata = {
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Home', href: getPermalink('homes/personal') },
-        { text: 'About', href: getPermalink('/about') },
+        { text: 'Home', href: '/' },
+        { text: 'About', href: getPermalink('/about2') },
         { text: 'Resume', href: getPermalink('/resume') },
-        { text: 'Porfolio', href: '#porfolio' },
-        { text: 'Blog', href: '#blog' },
-        { text: 'Github', href: 'https://github.com/onwidget' },
-      ]}
-      actions={[
-        {
-          text: 'Hire me',
-          href: '#',
-        },
+        { text: 'Porfolio', href: getPermalink('/portfolio') },
+        { text: 'Blog', href: '/blog' },
       ]}
       isSticky
       showToggleTheme

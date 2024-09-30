@@ -25,6 +25,12 @@ const metadata = {
         { text: 'Porfolio', href: getPermalink('/portfolio') },
         { text: 'Blog', href: '/blog' },
       ]}
+      actions={[
+        {
+          text: 'Hire me',
+          href: '#',
+        },
+      ]}
       isSticky
       showToggleTheme
     />
@@ -35,7 +41,7 @@ const metadata = {
   <Hero
     id="hero"
     title="Sarah Johnson"
-    tagline="Resume"
+    tagline="Portfolio"
     actions={[{ variant: 'primary', text: 'Download Resume', href: getPermalink('/contact#form') }]}
   >
     <Fragment slot="subtitle">
