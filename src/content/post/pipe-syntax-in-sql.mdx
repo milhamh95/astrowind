@@ -1,0 +1,41 @@
+---
+publishDate: 2024-10-18T20:00:00Z
+title: Pipe Syntax in SQL
+excerpt: How Google SQL's pipe syntax can be used to create a more readable query.
+image: https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&dl=caspar-camille-rubin-fPkvU7RDmCo-unsplash.jpg&w=1920
+tags:
+  - sql
+---
+
+import DListItem from '~/components/ui/DListItem.astro';
+import ToggleTheme from '~/components/common/ToggleTheme.astro';
+
+Recently, [Google](https://research.google/pubs/sql-has-problems-we-can-fix-them-pipe-syntax-in-sql/) added pipe data flow syntax (`|>`) to SQL.
+
+SQL Example Query 👇
+
+```sql
+-- SQL Query
+SELECT product_id, COUNT(*)
+FROM orders_table
+WHERE
+  sales_rep.email = 'rep@example.com'
+  AND order_status IN ('PENDING', 'CONFIRMED', 'SHIPPED')
+GROUP BY product_id
+ORDER BY product_id DESC;
+```
+
+Pipe Query Alternative 👇
+
+```sql
+FROM orders_table
+|> WHERE 
+    sales_rep.email = 'rep@example.com'
+    AND order_status IN ('PENDING', 'CONFIRMED', 'SHIPPED')
+|> AGGREGATE COUNT(*)
+    GROUP AND ORDER BY product_id DESC;
+```
+
+Actually I really like using pipe syntax in sql, because now with pipe syntax the syntax order matches with the semantic evaluation order (query processing order) for `SELECT` statement.
+
+![SQL Pipe Syntax](/src/assets/images/sql_pipe_syntax.png)

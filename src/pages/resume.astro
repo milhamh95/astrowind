@@ -1,12 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-
 import Header from '~/components/widgets/Header.astro';
-import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Steps3 from '~/components/widgets/Steps3.astro';
-import Skills from '~/components/widgets/Skills.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -30,136 +26,142 @@ const metadata = {
     />
   </Fragment>
 
-  <!-- Hero2 Widget ******************* -->
-
-  <Hero
-    id="hero"
-    title="Sarah Johnson"
-    tagline="Resume"
-    actions={[{ variant: 'primary', text: 'Download Resume', href: getPermalink('/contact#form') }]}
-  >
-    <Fragment slot="subtitle">
-      I'm a Graphic Designer passionate about crafting visual stories. <br /> With 5 years of experience and a degree from
-      New York University's School of Design. I infuse vitality into brands and designs, transforming concepts into captivating
-      realities.
-    </Fragment>
-  </Hero>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    id="about"
-    columns={3}
-    items={[
-      {
-        icon: 'tabler:brand-dribbble',
-        callToAction: {
-          target: '_blank',
-          text: 'Dribbble',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-behance',
-        callToAction: {
-          target: '_blank',
-          text: 'Behance',
-          href: '#',
-        },
-      },
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
-        },
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1491349174775-aaafddd81942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80',
-      alt: 'Colorful Image',
-      loading: 'eager',
-    }}
-  >
-    <Fragment slot="content">
-      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-      <p>
-        Welcome to my creative journey. My work is a testament to my commitment to bringing ideas to life, where each
-        pixel becomes a brushstroke in the canvas of imagination.
-      </p>
-      <br />
-      <p>
-        I find inspiration in the world around me, whether through the pages of a captivating novel, the intricate
-        details of typography, or the vibrant hues of nature during my outdoor escapades.
-      </p>
-      <br />
-      <p>If you're curious to dive deeper into my work, you can follow me:</p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
   <!-- Steps Widget ****************** -->
 
   <Steps3
     id="resume"
-    title="Work experience"
+    title="Work Experience"
     items={[
       {
         title:
-          'Senior Backend Engineer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+          'Senior Backend Engineer <br /> <span class="font-normal"><a href="https://hijra.id/" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">Hijra</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
           description: `
-        <ol class="list-disc list-inside">
+          <ol class="list-disc list-inside">
             <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
+                Reduced the lease agreement signing process time by 50% in coworking space booking system by integrating HelloSign API and AWS S3. This led to a significant time saving of 468 hours annually for 5-person business team.
             </li>
-            <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
-            </li>
-            <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
-            </li>
-        </ol>`,
+            <li class="flex items-center space-x-2 pt-2">
+                <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Image 1">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Spring+Boot&color=6DB33F&logo=Spring+Boot&logoColor=FFFFFF&label=" alt="Image 2">
+                <img src="https://img.shields.io/badge/-Liquibase-2962FF?style=for-the-badge&logo=liquibase&logoColor=white"/>
+                <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Image 1">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Image 1">
+                <img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="Image 1">
+                <img src="https://img.shields.io/badge/JSP-%23E34F26.svg?style=for-the-badge" alt="Image 1">
+                <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Image 1">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=whites" alt="Image 2">
+                <img src="https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Image 2">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/Kibana-48D1CC?style=for-the-badge&logo=Kibana&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=Jenkins&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Argo%20CD&color=EF7B4D&logo=Argo&logoColor=FFFFFF&label=" alt="Image 2">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Google+Cloud+SQL+for+PostgresSQL&color=4285F4&logo=postgresql&logoColor=FFFFFF&label=" alt="Image 2">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Google+Cloud+Logging&color=4285F4&logo=Google+Cloud&logoColor=FFFFFF&label=" alt="Image 2">
+              </li>
+          </ol>`,
         logo: 'src/assets/images/hijrabyalamigrouplogo_125x125.jpeg',
       },
       {
         title:
-          'Senior Backend Engineer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+          'Senior Backend Engineer <br /> <span class="font-normal"><a href="https://www.linkaja.id/" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">LinkAja</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
           description: `
-        <ol class="list-disc list-inside">
-            <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
-            </li>
-            <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
-            </li>
-        </ol>`,
+          <ol class="list-disc list-inside">
+              <li>
+                  Reduced the lease agreement signing process time by 50% in coworking space booking system by integrating HelloSign API and AWS S3. This led to a significant time saving of 468 hours annually for 5-person business team.
+              </li>
+              <li>
+                  Reduced the lease agreement signing process time by 50% in coworking space booking system by integrating HelloSign API and AWS S3. This led to a significant time saving of 468 hours annually for 5-person business team.
+              </li>
+              <li class="flex items-center space-x-2 pt-2">
+                <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Image 1">
+                <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Image 1">
+                <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Image 1">
+                <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Image 1">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/Open%20API%20-4479A1.svg?style=for-the-badge&logo=openapiinitiative&logoColor=black" alt="Image 2">
+                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&logo=apachekafka" alt="Image 2">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/grafana%20Loki-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white" alt="Image 2">
+                </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/Kibana-48D1CC?style=for-the-badge&logo=Kibana&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/Amazon%20RDS%20for%20MySQL-FFA500.svg?style=for-the-badge&logo=amazonrds&logoColor=black" alt="Image 2">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Amazon+EC2&color=222222&logo=Amazon+EC2&logoColor=FF9900&label=" alt="Image 2">
+              </li>
+          </ol>`,
         logo: 'src/assets/images/linkajalogo_125x125.jpeg',
       },
       {
         title:
-          'Software Engineer - Backend <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
+          'Software Engineer - Backend <br /> <span class="font-normal"><a href="https://www.linkedin.com/company/kurio/" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">Kurio</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
           description: `
-        <ol class="list-disc list-inside">
-            <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
-            </li>
-            <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
-            </li>
-        </ol>`,
+          <ol class="list-disc list-inside">
+              <li>
+                  Reduced the lease agreement signing process time by 50% in coworking space booking system by integrating HelloSign API and AWS S3. This led to a significant time saving of 468 hours annually for 5-person business team.
+              </li>
+              <li class="flex items-center space-x-2 pt-2">
+                <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Image 1">
+                <img src="https://img.shields.io/badge/Open%20API%20-4479A1.svg?style=for-the-badge&logo=openapiinitiative&logoColor=black" alt="Image 2">
+                <img src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Image 1">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=whites" alt="Image 2">
+                <img src="https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="Image 2">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Image 2">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Buddy&color=1A86FD&logo=Buddy&logoColor=FFFFFF&label=" alt="Image 2">
+                <img src="https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white" alt="Image 2">
+              </li>
+              <li class="flex items-center space-x-2 pt-3">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Google+Cloud+SQL+for+MySQL&color=4285F4&logo=mysql&logoColor=FFFFFF&label=" alt="Image 2">
+                <img src="https://img.shields.io/static/v1?style=for-the-badge&message=Google+Cloud+Logging&color=4285F4&logo=Google+Cloud&logoColor=FFFFFF&label=" alt="Image 2">
+              </li>
+          </ol>`,
         logo: 'src/assets/images/kuriologo_125x125.jpeg',
       },
       {
         title:
-          'Backend Developer <br /> <span class="font-normal"><a href="https://www.pasarpolis.com" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">PasarPolis</a></span> <br /> <span class="text-sm font-normal">Juli 2017 - Februari 2018</span>',
-          description: `
+          'Backend Developer <br /> <span class="font-normal"><a href="https://east.vc/portfolio/cohive/" target="_blank" rel="noopener noreferrer" class="no-underline hover:underline">CoHive</a></span> <br /> <span class="text-sm font-normal">September 2018 - Juli 2019</span>',
+        description: `
         <ol class="list-disc list-inside">
             <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
+                Reduced the lease agreement signing process time by 50% in coworking space booking system by integrating HelloSign API and AWS S3. This led to a significant time saving of 468 hours annually for 5-person business team.
+            </li>
+            <li class="flex items-center space-x-2 pt-2">
+              <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Image 1">
+              <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Image 1">
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Image 2">
+              <img src="https://img.shields.io/badge/redis-%23DD0031.svg?&style=for-the-badge&logo=redis&logoColor=white" alt="Image 2">
+            </li>
+            <li class="flex items-center space-x-2 pt-3">
+              <img src="https://img.shields.io/badge/bitbucket-%230047B3.svg?style=for-the-badge&logo=bitbucket&logoColor=white" alt="Image 2">
+              <img src="https://img.shields.io/badge/Amazon%20RDS%20for%20MySQL-FFA500.svg?style=for-the-badge&logo=amazonrds&logoColor=black" alt="Image 2">
+              <img src="https://img.shields.io/badge/Amazon%20S3-FFA500.svg?style=for-the-badge&logo=amazons3&logoColor=black" alt="Image 2">
+            </li>
+            <li class="flex items-center space-x-2 pt-3">
+              <img src="https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white" alt="Image 2">
+              <img src="https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=Jenkins&logoColor=white" alt="Image 2">
+              <img src="https://img.shields.io/badge/Kibana-48D1CC?style=for-the-badge&logo=Kibana&logoColor=white" alt="Image 2">
             </li>
         </ol>`,
         logo: 'src/assets/images/cohivespacelogo_125x125.jpeg',
@@ -170,7 +172,22 @@ const metadata = {
         description: `
         <ol class="list-disc list-inside">
             <li>
-                Implemented Midtrans payment gateway, automating the payment verification process and reducing transaction processing time by 80%.
+                Reduced the lease agreement signing process time by 50% in coworking space booking system by integrating HelloSign API and AWS S3. This led to a significant time saving of 468 hours annually for 5-person business team.
+            </li>
+            <li class="flex items-center space-x-2 pt-2">
+              <img src="https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white" alt="Image 1">
+              <img src="https://img.shields.io/badge/laravel-%23FF2D20.svg?style=for-the-badge&logo=laravel&logoColor=white" alt="Image 1">
+              <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Image 2">
+              <img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Image 2">
+            </li>
+            <li class="flex items-center space-x-2 pt-3">
+              <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" alt="Image 2">
+              <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Image 2">
+              <img src="https://img.shields.io/badge/bitbucket-%230047B3.svg?style=for-the-badge&logo=bitbucket&logoColor=white" alt="Image 2">
+            </li>
+            <li class="flex items-center space-x-2 pt-3">
+              <img src="https://img.shields.io/badge/Amazon%20RDS%20for%20MySQL-FFA500.svg?style=for-the-badge&logo=amazonrds&logoColor=black" alt="Image 2">
+              <img src="https://img.shields.io/badge/Amazon%20Elastic%20Beanstalk-FFA500.svg?style=for-the-badge&logo=amazonwebservices&logoColor=black" alt="Image 2">
             </li>
         </ol>`,
         logo: 'src/assets/images/pasarpolislogo_125x125.jpeg',
@@ -179,47 +196,51 @@ const metadata = {
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    id="resume"
-    title="Education"
-    items={[
-      {
-        title: `Information System <br /> <span class="font-normal">Universitas Brawijaya</span> <br /> <span class="text-sm font-normal">2017</span>`,
-        icon: 'tabler:school',
-      },
-    ]}
-    classes={{ container: 'max-w-3xl' }}
-  />
-
   <Steps3
     id="resume"
-    title="Educationsdfsdf"
+    title="Skills"
     items={[
       {
-        title: `Programming Language <br /> <br /> <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <li class="flex items-center space-x-2">
-          <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Image 1">
-          <img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" alt="Image 2">
-        </li>
-        <!-- Repeat for other list items -->
-</ul>`,
+        title: `Programming Languages <br /> <br /> 
+        <ol class="list-disc list-inside">
+            <li class="flex items-center space-x-2 pt-2">
+              <img src="https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white" alt="Image 1">
+              <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white" alt="Image 1">
+              <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="Image 1">
+            </li>
+        </ol>`,
         icon: 'tabler:code',
       },
       {
-        title: `Information System <br /> <span class="font-normal">Universitas Brawijaya</span> <br /> <span class="text-sm font-normal">2017</span>`,
-        icon: 'tabler:school',
+        title: `Databases <br /> <br /> 
+        <ol list-disc list-inside>
+          <li class="flex items-center space-x-2">
+            <img src="https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white" alt="Image 2">
+            <img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="Image 1">
+            <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="Image 1">
+            <img src="https://img.shields.io/badge/redis-%23DD0031.svg?style=for-the-badge&logo=redis&logoColor=white" alt="Image 1">
+          </li>
+       </ol>`,
+        icon: 'tabler:database',
       },
       {
-        title: `Information System <br /> <span class="font-normal">Universitas Brawijaya</span> <br /> <span class="text-sm font-normal">2017</span>`,
-        icon: 'tabler:school',
+        title: `Others <br /> <br /> 
+        <ol class="space-y-2">
+          <li class="flex items-center space-x-2">
+          <img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Image 1">
+            <img src="https://img.shields.io/badge/Apache%20Kafka-000?style=for-the-badge&logo=apachekafka" alt="Image 2">
+            <img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Image 2">
+            <img src="https://img.shields.io/badge/-GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white" alt="Image 2">
+            <img src="https://img.shields.io/badge/Open%20API%20-4479A1.svg?style=for-the-badge&logo=openapiinitiative&logoColor=black" alt="Image 2">
+          </li>
+       </ol>`,
+        icon: 'tabler:tool',
       },
     ]}
     classes={{ container: 'max-w-3xl' }}
   />
 
-  <Skills
+  <Steps
     id="resume"
     title="Education"
     items={[
