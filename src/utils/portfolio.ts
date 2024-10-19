@@ -113,7 +113,6 @@ const load = async function (): Promise<Array<PortfolioPost>> {
 
 let _portfolioPosts: Array<PortfolioPost>;
 
-/** */
 export const isPortfolioEnabled = APP_PORTFOLIO.isEnabled;
 export const isRelatedPortfolioPostsEnabled = APP_PORTFOLIO.isRelatedPortfolioPostsEnabled;
 export const isPortfolioListRouteEnabled = APP_PORTFOLIO.list.isEnabled;
@@ -127,20 +126,6 @@ export const portfolioCategoryRobots = APP_PORTFOLIO.category.robots;
 export const portfolioTagRobots = APP_PORTFOLIO.tag.robots;
 
 export const portfolioPostsPerPage = APP_PORTFOLIO?.postsPerPage;
-
-export const isBlogEnabled = APP_BLOG.isEnabled;
-export const isRelatedPostsEnabled = APP_BLOG.isRelatedPostsEnabled;
-export const isBlogListRouteEnabled = APP_BLOG.list.isEnabled;
-export const isBlogPostRouteEnabled = APP_BLOG.post.isEnabled;
-export const isBlogCategoryRouteEnabled = APP_BLOG.category.isEnabled;
-export const isBlogTagRouteEnabled = APP_BLOG.tag.isEnabled;
-
-export const blogListRobots = APP_BLOG.list.robots;
-export const blogPostRobots = APP_BLOG.post.robots;
-export const blogCategoryRobots = APP_BLOG.category.robots;
-export const blogTagRobots = APP_BLOG.tag.robots;
-
-export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
 /** */
 export const fetchPortfolioPosts = async (): Promise<Array<PortfolioPost>> => {
@@ -189,16 +174,16 @@ export const findLatestPortfolioPosts = async ({ count }: { count?: number }): P
 
 /** */
 export const getStaticPathsPortfolioList = async ({ paginate }: { paginate: PaginateFunction }) => {
-  if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
+  if (!isPortfolioEnabled || !isPortfolioListRouteEnabled) return [];
   return paginate(await fetchPortfolioPosts(), {
     params: { blog: BLOG_BASE || undefined },
-    pageSize: blogPostsPerPage,
+    pageSize: portfolioPostsPerPage,
   });
 };
 
 /** */
 export const getStaticPathsPortfolioPost = async () => {
-  if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
+  if (!isPortfolioEnabled || !isPortfolioPostRouteEnabled) return [];
   return (await fetchPortfolioPosts()).flatMap((post) => ({
     params: {
       blog: post.permalink,
@@ -209,7 +194,7 @@ export const getStaticPathsPortfolioPost = async () => {
 
 /** */
 export const getStaticPathsPortfolioCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
-  if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
+  if (!isPortfolioEnabled || !isPortfolioCategoryRouteEnabled) return [];
 
   const posts = await fetchPortfolioPosts();
   const categories = {};
@@ -224,7 +209,7 @@ export const getStaticPathsPortfolioCategory = async ({ paginate }: { paginate: 
       posts.filter((post) => post.category?.slug && categorySlug === post.category?.slug),
       {
         params: { category: categorySlug, blog: CATEGORY_BASE || undefined },
-        pageSize: blogPostsPerPage,
+        pageSize: portfolioPostsPerPage,
         props: { category: categories[categorySlug] },
       }
     )
@@ -233,7 +218,7 @@ export const getStaticPathsPortfolioCategory = async ({ paginate }: { paginate: 
 
 /** */
 export const getStaticPathsPortfolioTag = async ({ paginate }: { paginate: PaginateFunction }) => {
-  if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
+  if (!isPortfolioEnabled || !isPortfolioTagRouteEnabled) return [];
 
   const posts = await fetchPortfolioPosts();
   const tags = {};
@@ -250,7 +235,7 @@ export const getStaticPathsPortfolioTag = async ({ paginate }: { paginate: Pagin
       posts.filter((post) => Array.isArray(post.tags) && post.tags.find((elem) => elem.slug === tagSlug)),
       {
         params: { tag: tagSlug, blog: TAG_BASE || undefined },
-        pageSize: blogPostsPerPage,
+        pageSize: portfolioPostsPerPage,
         props: { tag: tags[tagSlug] },
       }
     )
