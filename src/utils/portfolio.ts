@@ -152,7 +152,7 @@ export const fetchPortfolioPosts = async (): Promise<Array<PortfolioPost>> => {
 };
 
 /** */
-export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<PortfolioPost>> => {
+export const findPortfolioPostsBySlugs = async (slugs: Array<string>): Promise<Array<PortfolioPost>> => {
   if (!Array.isArray(slugs)) return [];
 
   const posts = await fetchPortfolioPosts();
@@ -166,7 +166,7 @@ export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Port
 };
 
 /** */
-export const findPostsByIds = async (ids: Array<string>): Promise<Array<PortfolioPost>> => {
+export const findPortfolioPostsByIds = async (ids: Array<string>): Promise<Array<PortfolioPost>> => {
   if (!Array.isArray(ids)) return [];
 
   const posts = await fetchPortfolioPosts();
@@ -180,7 +180,7 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Portfoli
 };
 
 /** */
-export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<PortfolioPost>> => {
+export const findLatestPortfolioPosts = async ({ count }: { count?: number }): Promise<Array<PortfolioPost>> => {
   const _count = count || 4;
   const posts = await fetchPortfolioPosts();
 
@@ -188,7 +188,7 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 };
 
 /** */
-export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
+export const getStaticPathsPortfolioList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
   return paginate(await fetchPortfolioPosts(), {
     params: { blog: BLOG_BASE || undefined },
@@ -197,7 +197,7 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
 };
 
 /** */
-export const getStaticPathsBlogPost = async () => {
+export const getStaticPathsPortfolioPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
   return (await fetchPortfolioPosts()).flatMap((post) => ({
     params: {
@@ -208,7 +208,7 @@ export const getStaticPathsBlogPost = async () => {
 };
 
 /** */
-export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
+export const getStaticPathsPortfolioCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
   const posts = await fetchPortfolioPosts();
@@ -232,7 +232,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
 };
 
 /** */
-export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
+export const getStaticPathsPortfolioTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
   const posts = await fetchPortfolioPosts();
@@ -258,7 +258,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
 };
 
 /** */
-export async function getRelatedPosts(originalPost: PortfolioPost, maxResults: number = 4): Promise<PortfolioPost[]> {
+export async function getRelatedPortfolioPosts(originalPost: PortfolioPost, maxResults: number = 4): Promise<PortfolioPost[]> {
   const allPosts = await fetchPortfolioPosts();
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
 
