@@ -111,7 +111,7 @@ const load = async function (): Promise<Array<PortfolioPost>> {
   return results;
 };
 
-let _posts: Array<PortfolioPost>;
+let _portfolioPosts: Array<PortfolioPost>;
 
 /** */
 export const isPortfolioEnabled = APP_PORTFOLIO.isEnabled;
@@ -143,19 +143,19 @@ export const blogTagRobots = APP_BLOG.tag.robots;
 export const blogPostsPerPage = APP_BLOG?.postsPerPage;
 
 /** */
-export const fetchPosts = async (): Promise<Array<PortfolioPost>> => {
-  if (!_posts) {
-    _posts = await load();
+export const fetchPortfolioPosts = async (): Promise<Array<PortfolioPost>> => {
+  if (!_portfolioPosts) {
+    _portfolioPosts = await load();
   }
 
-  return _posts;
+  return _portfolioPosts;
 };
 
 /** */
 export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<PortfolioPost>> => {
   if (!Array.isArray(slugs)) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchPortfolioPosts();
 
   return slugs.reduce(function (r: Array<PortfolioPost>, slug: string) {
     posts.some(function (post: PortfolioPost) {
@@ -169,7 +169,7 @@ export const findPostsBySlugs = async (slugs: Array<string>): Promise<Array<Port
 export const findPostsByIds = async (ids: Array<string>): Promise<Array<PortfolioPost>> => {
   if (!Array.isArray(ids)) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchPortfolioPosts();
 
   return ids.reduce(function (r: Array<PortfolioPost>, id: string) {
     posts.some(function (post: PortfolioPost) {
@@ -182,7 +182,7 @@ export const findPostsByIds = async (ids: Array<string>): Promise<Array<Portfoli
 /** */
 export const findLatestPosts = async ({ count }: { count?: number }): Promise<Array<PortfolioPost>> => {
   const _count = count || 4;
-  const posts = await fetchPosts();
+  const posts = await fetchPortfolioPosts();
 
   return posts ? posts.slice(0, _count) : [];
 };
@@ -190,7 +190,7 @@ export const findLatestPosts = async ({ count }: { count?: number }): Promise<Ar
 /** */
 export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogListRouteEnabled) return [];
-  return paginate(await fetchPosts(), {
+  return paginate(await fetchPortfolioPosts(), {
     params: { blog: BLOG_BASE || undefined },
     pageSize: blogPostsPerPage,
   });
@@ -199,7 +199,7 @@ export const getStaticPathsBlogList = async ({ paginate }: { paginate: PaginateF
 /** */
 export const getStaticPathsBlogPost = async () => {
   if (!isBlogEnabled || !isBlogPostRouteEnabled) return [];
-  return (await fetchPosts()).flatMap((post) => ({
+  return (await fetchPortfolioPosts()).flatMap((post) => ({
     params: {
       blog: post.permalink,
     },
@@ -211,7 +211,7 @@ export const getStaticPathsBlogPost = async () => {
 export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogCategoryRouteEnabled) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchPortfolioPosts();
   const categories = {};
   posts.map((post) => {
     if (post.category?.slug) {
@@ -235,7 +235,7 @@ export const getStaticPathsBlogCategory = async ({ paginate }: { paginate: Pagin
 export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFunction }) => {
   if (!isBlogEnabled || !isBlogTagRouteEnabled) return [];
 
-  const posts = await fetchPosts();
+  const posts = await fetchPortfolioPosts();
   const tags = {};
   posts.map((post) => {
     if (Array.isArray(post.tags)) {
@@ -259,7 +259,7 @@ export const getStaticPathsBlogTag = async ({ paginate }: { paginate: PaginateFu
 
 /** */
 export async function getRelatedPosts(originalPost: PortfolioPost, maxResults: number = 4): Promise<PortfolioPost[]> {
-  const allPosts = await fetchPosts();
+  const allPosts = await fetchPortfolioPosts();
   const originalTagsSet = new Set(originalPost.tags ? originalPost.tags.map((tag) => tag.slug) : []);
 
   const postsWithScores = allPosts.reduce((acc: { post: PortfolioPost; score: number }[], iteratedPost: PortfolioPost) => {
