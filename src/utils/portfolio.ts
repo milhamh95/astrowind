@@ -2,7 +2,7 @@ import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { PortfolioPost } from '~/types';
-import { APP_BLOG } from 'astrowind:config';
+import { APP_BLOG, APP_PORTFOLIO } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
 const generatePermalink = async ({
@@ -114,6 +114,20 @@ const load = async function (): Promise<Array<PortfolioPost>> {
 let _posts: Array<PortfolioPost>;
 
 /** */
+export const isPortfolioEnabled = APP_PORTFOLIO.isEnabled;
+export const isRelatedPortfolioPostsEnabled = APP_PORTFOLIO.isRelatedPortfolioPostsEnabled;
+export const isPortfolioListRouteEnabled = APP_PORTFOLIO.list.isEnabled;
+export const isPortfolioPostRouteEnabled = APP_PORTFOLIO.post.isEnabled;
+export const isPortfolioCategoryRouteEnabled = APP_PORTFOLIO.category.isEnabled;
+export const isPortfolioTagRouteEnabled = APP_PORTFOLIO.tag.isEnabled;
+
+export const portfolioListRobots = APP_PORTFOLIO.list.robots;
+export const portfolioPostRobots = APP_PORTFOLIO.post.robots;
+export const portfolioCategoryRobots = APP_PORTFOLIO.category.robots;
+export const portfolioTagRobots = APP_PORTFOLIO.tag.robots;
+
+export const portfolioPostsPerPage = APP_PORTFOLIO?.postsPerPage;
+
 export const isBlogEnabled = APP_BLOG.isEnabled;
 export const isRelatedPostsEnabled = APP_BLOG.isRelatedPostsEnabled;
 export const isBlogListRouteEnabled = APP_BLOG.list.isEnabled;
