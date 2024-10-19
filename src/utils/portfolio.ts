@@ -2,7 +2,7 @@ import type { PaginateFunction } from 'astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import type { PortfolioPost } from '~/types';
-import { APP_BLOG, APP_PORTFOLIO } from 'astrowind:config';
+import { APP_PORTFOLIO } from 'astrowind:config';
 import { cleanSlug, trimSlash, BLOG_BASE, POST_PERMALINK_PATTERN, CATEGORY_BASE, TAG_BASE } from './permalinks';
 
 const generatePermalink = async ({
