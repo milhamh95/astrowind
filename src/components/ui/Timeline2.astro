@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { twMerge } from 'tailwind-merge';
+import Image from '~/components/common/Image.astro';
 import type { Item } from '~/types';
 
 export interface Props {
@@ -23,18 +24,26 @@ const {
 {
   items && items.length && (
     <div class={containerClass}>
-      {items.map(({ title, description, icon, logo ,classes: itemClasses = {} }, index = 0) => (
+      {items.map(({ title, description, icon, logo, classes: itemClasses = {} }, index = 0) => (
         <div class={twMerge('flex', panelClass, itemClasses?.panel)}>
           <div class="flex flex-col items-center mr-4 rtl:mr-0 rtl:ml-4">
             <div>
               <div class="flex items-center justify-center">
                 {logo ? (
-                  <img src={logo} alt="Custom logo" class={twMerge('w-13 h-13 p-1 rounded-full border-2 my-auto', defaultIconClass, itemClasses?.icon)} />
-                ) : (icon || defaultIcon) && (
-                  <Icon
-                    name={icon || defaultIcon}
-                    class={twMerge('w-10 h-10 p-2 rounded-full border-2', defaultIconClass, itemClasses?.icon)}
+                  <Image
+                    class={twMerge('w-13 h-13 p-1 rounded-full border-2 my-auto', defaultIconClass, itemClasses?.icon)}
+                    width={125}
+                    height={125}
+                    src={logo}
+                    alt={'logo'}
                   />
+                ) : (
+                  (icon || defaultIcon) && (
+                    <Icon
+                      name={icon || defaultIcon}
+                      class={twMerge('w-10 h-10 p-2 rounded-full border-2', defaultIconClass, itemClasses?.icon)}
+                    />
+                  )
                 )}
               </div>
             </div>
