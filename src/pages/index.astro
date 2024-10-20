@@ -30,13 +30,8 @@ const metadata = {
 
   <!-- Hero2 Widget ******************* -->
 
-  <Hero
-    id="hero"
-    title="Hi there 👋, I'm ilham."
-  >
-    <Fragment slot="subtitle">
-      Welcome to my blog.
-    </Fragment>
+  <Hero id="hero" title="Hi there 👋, I'm ilham.">
+    <Fragment slot="subtitle"> Welcome to my blog. </Fragment>
   </Hero>
 
   <!-- Content Widget **************** -->
@@ -44,19 +39,18 @@ const metadata = {
   <Content
     id="about"
     image={{
-      src: 'https://i.ibb.co.com/5TM0mVP/muhammad-ilham-hidayat.jpg',
+      src: 'src/assets/images/muhammad-ilham-hidayat.jpg',
       alt: 'Colorful Image',
       loading: 'eager',
     }}
   >
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-      <p>
-        I'm a software engineer from Indonesia 🇮🇩. 
-      </p>
+      <p>I'm a software engineer from Indonesia 🇮🇩.</p>
       <br />
       <p>
-        While my primary focus is on back end development, I'm open to exploring and working on other areas such as front end 😁.
+        While my primary focus is on back end development, I'm open to exploring and working on other areas such as
+        front end 😁.
       </p>
     </Fragment>
 
@@ -67,10 +61,7 @@ const metadata = {
 
   <!-- BlogLatestPost Widget **************** -->
 
-  <BlogLatestPosts
-    id="blog"
-    title="Explore my insightful articles on my blog"
-  >
+  <BlogLatestPosts id="blog" title="Explore my insightful articles on my blog">
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>

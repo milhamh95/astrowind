@@ -47,11 +47,10 @@ const metadata = merge(
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
   <Fragment slot="header">
     <Header
       links={[
-        { text: 'Home', href: '#' },
+        { text: 'Home', href: '/' },
         { text: 'About', href: getPermalink('/about2') },
         { text: 'Resume', href: getPermalink('/resume') },
         { text: 'Portfolio', href: '/category/portfolio' },
