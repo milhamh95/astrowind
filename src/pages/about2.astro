@@ -19,7 +19,7 @@ const metadata = {
         { text: 'Home', href: '/' },
         { text: 'About', href: getPermalink('/about2') },
         { text: 'Resume', href: getPermalink('/resume') },
-        { text: 'Portfolio', href: getPermalink('/portfolio') },
+        { text: 'Portfolio', href: '/category/portfolio' },
         { text: 'Blog', href: '/blog' },
       ]}
       isSticky
@@ -42,21 +42,18 @@ const metadata = {
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <p class="text-justify">
-        👋 Hello, my name is Ilham. Currently I'm working at Hijra to bring sharia-compliant 
-        financial technology solutions as a Back End software engineer
+        👋 Hello, my name is Ilham. Currently I'm working at Hijra to bring sharia-compliant financial technology
+        solutions as a Back End software engineer
       </p>
       <br />
       <p class="text-justify">
-        🛠️ Experienced in developing and maintaining backend application API and API integrations using Golang, Java, Modular Monolith, Microservices, and Event Driven.
+        🛠️ Experienced in developing and maintaining backend application API and API integrations using Golang, Java,
+        Modular Monolith, Microservices, and Event Driven.
       </p>
       <br />
-      <p  class="text-justify">
-        👐 But I don't limit myself working on Front End and Data Engineering as well.
-      </p>
+      <p class="text-justify">👐 But I don't limit myself working on Front End and Data Engineering as well.</p>
       <br />
-      <p class="text-justify">
-        🎮 My hobbies are collecting Mini 4WD, building GunPla, and reading books.
-      </p>
+      <p class="text-justify">🎮 My hobbies are collecting Mini 4WD, building GunPla, and reading books.</p>
       <br />
     </Fragment>
 
@@ -86,5 +83,4 @@ const metadata = {
       alt: 'AstroWind Hero Image',
     }}
   />
-
 </Layout>
