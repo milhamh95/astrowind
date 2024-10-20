@@ -30,7 +30,7 @@ Pipe Query Alternative 👇
 
 ```sql
 FROM orders_table
-|> WHERE 
+|> WHERE
     sales_rep.email = 'rep@example.com'
     AND order_status IN ('PENDING', 'CONFIRMED', 'SHIPPED')
 |> AGGREGATE COUNT(*)
@@ -39,4 +39,4 @@ FROM orders_table
 
 Actually I really like using pipe syntax in sql, because now with pipe syntax the syntax order matches with the semantic evaluation order (query processing order) for `SELECT` statement.
 
-![SQL Pipe Syntax](/src/assets/images/sql_pipe_syntax.png)
+![SQL Pipe Syntax](~/assets/images/sql_pipe_syntax.png)
